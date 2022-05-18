@@ -3,6 +3,7 @@ import cv2
 import numpy as np
 import face_distance
 import hand_distance
+import speech_recognition as sr
 import cvzone
 from cvzone.SelfiSegmentationModule import SelfiSegmentation
 import pygame
@@ -13,6 +14,16 @@ pygame.display.set_caption('')
 
 width = wn.get_width()
 height = wn.get_height()
+
+def get_speech():
+    r = sr.Recognizer()
+    try:
+        with sr.Microphone() as source:
+            audio = r.listen(source)
+            text = r.recognize_google(audio)
+            return text.lower()
+    except:
+        return False
 
 def overlay(img, bg):
     return cvzone.overlayPNG(bg, img, [100, 100])
