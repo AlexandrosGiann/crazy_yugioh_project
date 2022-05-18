@@ -120,8 +120,8 @@ while run:
                 wn.blit(card_image, (700, 100))
                 wn.blit(monster_image, (200, 100))
                 appear_mode = 1
-            elif f'rsz_{text}_CARD.jpg' in os.listdir('CARD_DB/main_deck_monster_cards'):
-                card_image = pygame.image.load(f'CARD_DB/main_deck_monster_cards/rsz_{text}_CARD.jpg')
+            elif f'rsz_{text}_card.jpg' in os.listdir('CARD_DB/main_deck_monster_cards'):
+                card_image = pygame.image.load(f'CARD_DB/main_deck_monster_cards/rsz_{text}_card.jpg')
                 monster_image = pygame.image.load(f'CARD_DB/main_deck_monsters/{text}_transparent.png')
                 wn.blit(card_image, (700, 100))
                 wn.blit(monster_image, (200, 100))
